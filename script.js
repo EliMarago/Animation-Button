@@ -1,7 +1,7 @@
 const button = document.querySelectorAll(".btn");
 
 const colors = [
-  "#F4F8D3",
+  "#57B4BA",
   "#A6D6D6",
   "#8E7DBE",
   "#BBD8A3",
@@ -21,12 +21,15 @@ const colors = [
 
 button.forEach((btn) => {
   btn.addEventListener("click", function (e) {
+    // Prende le coordinate del mouse al momento del click, rispetto allo schermo.
     const x = e.clientX;
     const y = e.clientY;
 
+    //Trova la posizione dell’angolo in alto a sinistra del bottone.
     const buttonTop = e.target.offsetTop;
     const buttonLeft = e.target.offsetLeft;
 
+    //Calcola dove hai cliccato dentro al bottone, non nella pagina
     const xInside = x - buttonLeft;
     const yInside = y - buttonTop;
 
